@@ -75,14 +75,38 @@
   body {
     @apply text-foreground font-sans;
     font-family: "Open Sans", sans-serif;
+    background: url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80")
+      center/cover no-repeat;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80")
+      center/cover no-repeat;
+    filter: blur(4px);
+    z-index: -2;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(
       135deg,
-      hsl(258 90% 66%) 0%,
-      hsl(302 84% 61%) 35%,
-      hsl(25 95% 53%) 100%
+      hsl(258 90% 66% / 0.3) 0%,
+      hsl(302 84% 61% / 0.2) 35%,
+      hsl(25 95% 53% / 0.3) 100%
     );
-    background-attachment: fixed;
-    min-height: 100vh;
+    z-index: -1;
   }
 
   h1,
